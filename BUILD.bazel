@@ -4756,9 +4756,9 @@ xnnpack_cc_library(
     name = "log_level_default",
     defines = select({
         # No logging in optimized mode
-        ":optimized_build": ["XNN_LOG_LEVEL=0"],
+        ":optimized_build": ["XNN_LOG_LEVEL=5"],
         # Info logging in debug mode.  Use `--define=xnn_log_level=debug` for full logging.
-        ":debug_build": ["XNN_LOG_LEVEL=4"],
+        ":debug_build": ["XNN_LOG_LEVEL=5"],
         # Error-only logging in default (fastbuild) mode
         "//conditions:default": ["XNN_LOG_LEVEL=2"],
     }),
